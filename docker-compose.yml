@@ -18,5 +18,5 @@ services:
     ports:
       - 5445:5432
     networks:
-      Vehicle-Plus-Network:
+      Admin-Console-Network:
         ipv4_address: 163.30.0.10
