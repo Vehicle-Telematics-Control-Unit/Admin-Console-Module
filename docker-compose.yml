@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  Admin-Console-Network:
+    ipam:
+      config:
+        - subnet: 163.30.0.0/16
+
+services:
+  database-service:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes: 
+      - /home/postgres/admin-database/:/var/lib/postgresql/data
+    ports:
+      - 5445:5432
+    networks:
+      Vehicle-Plus-Network:
+        ipv4_address: 163.30.0.10
